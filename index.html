@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth games</title>
+<meta name="description" content="Development builds of games made with Hearth, a small engine for dollhouse life simulations. Played in the browser.">
+<link rel="icon" href="mansion/icons/icon-192.png">
+<style>
+  @font-face { font-family: Pixel; src: url("mansion/fonts/PixelOperator.ttf") format("truetype"); font-display: swap; }
+  @font-face { font-family: Pixel; font-weight: bold; src: url("mansion/fonts/PixelOperator-Bold.ttf") format("truetype"); font-display: swap; }
+  :root {
+    --ink: #1b1a1f; --shadow: #3a3340; --oak: #a5764a; --cream: #e8dcb8; --paper: #f4efe0;
+    --slate: #4c627a; --steel: #7d93a8; --gold: #c9a34a; --rose: #b5707a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ink); color: var(--paper);
+    font: 18px/1.4 Pixel, ui-monospace, monospace; -webkit-font-smoothing: none;
+  }
+  main { max-width: 1040px; margin: 0 auto; padding: 32px 16px 48px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+  h1 { margin: 0; font-size: 40px; color: var(--gold); letter-spacing: 1px; }
+  .lang { display: flex; gap: 4px; }
+  .lang button {
+    font: inherit; font-size: 16px; color: var(--paper); background: var(--shadow); border: 2px solid var(--ink);
+    box-shadow: inset 2px 2px 0 var(--cream), inset -2px -2px 0 var(--oak); padding: 2px 10px; cursor: pointer;
+  }
+  .lang button[aria-pressed="true"] { background: var(--gold); color: var(--ink); }
+  .lead { margin: 12px 0 8px; max-width: 46em; color: var(--cream); }
+  .note {
+    margin: 16px 0 28px; padding: 10px 14px; border: 2px solid var(--gold); background: var(--shadow); color: var(--paper);
+  }
+  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .card { background: var(--shadow); border: 2px solid var(--ink); box-shadow: inset 0 0 0 2px var(--oak); display: flex; flex-direction: column; }
+  .card .pic { display: block; aspect-ratio: 16 / 9; background: var(--ink); border-bottom: 2px solid var(--ink); }
+  /* the screenshot is shown smaller than it was taken: a smooth scale keeps its pixels even */
+  .card .pic img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .card .pic.soon {
+    display: flex; align-items: center; justify-content: center; color: var(--steel); font-size: 28px;
+    background: repeating-linear-gradient(135deg, var(--ink) 0 14px, var(--shadow) 14px 28px);
+  }
+  .card .pic.soon span { background: var(--ink); padding: 6px 16px; border: 2px solid var(--steel); }
+  @media (max-width: 680px) { .card .pic.soon { aspect-ratio: 16 / 5; } }
+  .card .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .card h2 { margin: 0; font-size: 26px; color: var(--gold); }
+  .card p { margin: 0; color: var(--cream); }
+  .card .meta { color: var(--steel); font-size: 16px; }
+  .play {
+    margin-top: auto; align-self: flex-start; text-decoration: none; font-weight: bold; font-size: 20px;
+    color: var(--ink); background: var(--gold); padding: 8px 22px; border: 2px solid var(--ink);
+    box-shadow: inset 2px 2px 0 var(--cream), inset -2px -2px 0 var(--oak);
+  }
+  .play:hover, .play:focus-visible { background: var(--cream); outline: none; }
+  .play.off { background: var(--ink); color: var(--steel); box-shadow: inset 2px 2px 0 var(--steel); }
+  footer { margin-top: 40px; color: var(--steel); font-size: 16px; display: flex; flex-direction: column; gap: 6px; }
+  footer a { color: var(--cream); }
+  [data-fi] { display: none; }
+  html[lang="fi"] [data-en] { display: none; }
+  html[lang="fi"] [data-fi] { display: revert; }
+  @media (max-width: 420px) { h1 { font-size: 32px; } body { font-size: 17px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Hearth</h1>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="fi" aria-pressed="false">FI</button>
+    </div>
+  </header>
+  <p class="lead" data-en>Games made with Hearth, a small engine for dollhouse life simulations: a house seen from the side, and people
+    in it who live by their own needs, habits and moods. Everything runs in your browser, on a computer or a phone.</p>
+  <p class="lead" data-fi>Hearth on pieni moottori nukkekotimaisille elämäsimulaatioille: talo nähdään sivulta, ja sen asukkaat
+    elävät omien tarpeidensa, tapojensa ja mielialojensa mukaan. Pelit toimivat selaimessa tietokoneella ja puhelimella.</p>
+  <p class="note" data-en><b>Development build.</b> Everything may still change. Your saves are kept in this browser only.</p>
+  <p class="note" data-fi><b>Kehitysversio.</b> Kaikki voi vielä muuttua. Tallennukset säilyvät vain tässä selaimessa.</p>
+
+  <section class="games">
+    <article class="card">
+      <a class="pic" href="mansion/"><img src="img/mansion.png" width="960" height="540" alt="A country house in cross-section, its rooms full of servants and family"></a>
+      <div class="body">
+        <h2>Very Good, sir!</h2>
+        <p data-en>You are the butler of an English country house in 1910. The staff and the family lead their own lives; keep the
+          house running, the dinner on time and the guests content, until the season ends.</p>
+        <p data-fi>Olet englantilaisen kartanon hovimestari vuonna 1910. Palvelusväki ja perhe elävät omaa elämäänsä. Pidä talo
+          kunnossa, päivällinen ajallaan ja vieraat tyytyväisinä kauden loppuun asti.</p>
+        <p class="meta" data-en>English and Finnish · mouse or touch</p>
+        <p class="meta" data-fi>Englanniksi ja suomeksi · hiiri tai kosketus</p>
+        <a class="play" href="mansion/"><span data-en>Play</span><span data-fi>Pelaa</span></a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="pic soon"><span data-en>Coming later</span><span data-fi>Tulossa</span></div>
+      <div class="body">
+        <h2>Mane Street</h2>
+        <p data-en>A riding stable: rent and furnish stalls, buy and care for horses, and dress them up with tack, colours and
+          ribbons.</p>
+        <p data-fi>Ratsastustalli: vuokraa ja sisusta karsinoita, osta ja hoida hevosia ja pue ne varusteilla, väreillä ja
+          rusetteilla.</p>
+        <p class="meta" data-en>In the works</p>
+        <p class="meta" data-fi>Työn alla</p>
+        <span class="play off" aria-disabled="true"><span data-en>Not yet playable</span><span data-fi>Ei vielä pelattavissa</span></span>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    <span data-en>© 2026 the authors. All rights reserved: the games, their code and art may not be copied or redistributed.</span>
+    <span data-fi>© 2026 tekijät. Kaikki oikeudet pidätetään: pelejä, niiden koodia ja grafiikkaa ei saa kopioida eikä levittää.</span>
+    <span data-en>The sounds are CC0 (<a href="mansion/sounds/LICENSES.md">sources</a>).</span>
+    <span data-fi>Äänet ovat CC0-lisensoituja (<a href="mansion/sounds/LICENSES.md">lähteet</a>).</span>
+    <span id="version"></span>
+  </footer>
+</main>
+<script>
+  (function () {
+    var root = document.documentElement;
+    function set(lang) {
+      root.lang = lang;
+      document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === lang)); });
+      try { localStorage.setItem('hearth:site:lang', lang); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('hearth:site:lang'); } catch (e) {}
+    set(saved || ((navigator.language || '').toLowerCase().indexOf('fi') === 0 ? 'fi' : 'en'));
+    document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
+    fetch('version.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (v) {
+      if (v) document.getElementById('version').textContent = 'Build ' + v.commit + ' · ' + v.date;
+    }).catch(function () {});
+  })();
+</script>
+</body>
+</html>

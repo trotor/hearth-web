@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <!-- the canvas has its own pinch and pan, so the page itself never zooms; viewport-fit=cover lets the bars reach under a phone's notch
+         (hearth.css keeps them inside the safe area) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1b1a1f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Very Good, sir!" />
+    <title>Very Good, sir!</title>
+    <!-- The site works from any folder (https://host/mansion/, itch.io's nested one): the base is the page's own folder, unless
+         tools/web.sh publish --base wrote a fixed one here. -->
+    <base href="./" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="_content/Hearth.Web/hearth.css?v=0046a03" />
+    <style>
+        /* the loading screen, in the splash's look until the game's own splash replaces it: Blazor sets --blazor-load-percentage(-text)
+           while the runtime downloads */
+        @font-face { font-family: HearthTitle; src: url(fonts/PixelOperator-Bold.ttf); }
+        @font-face { font-family: HearthLabel; src: url(fonts/PixelOperator.ttf); }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="hearth-loading" style="background-image: url(sprites/splash.png)">
+            <p class="hl-name">Very Good, sir!</p>
+            <div class="hl-foot">
+                <div class="hl-bar"><i></i></div>
+                <p class="hl-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="_framework/blazor.webassembly.js?v=0046a03"></script>
+</body>
+</html>

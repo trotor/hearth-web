@@ -145,9 +145,16 @@ body { font: 15px/1.4 ui-monospace, Menlo, Consolas, monospace; }
 .hp-line { display: flex; align-items: center; gap: calc(var(--u) * 4); }
 .hp-grow { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
 .hp-small-button { min-width: calc(var(--u) * 36); flex: 0 0 auto; }
+/* a game panel line's picture (Hearth.View PanelPicture; the script sizes the canvas), and a line that is only a picture: a preview */
+.hp-pic { flex: 0 0 auto; image-rendering: pixelated; }
+.hp-preview { display: flex; justify-content: center; }
 .hp-wide-button { min-width: calc(var(--u) * 120); }
 .hp-options { display: flex; flex-wrap: wrap; gap: calc(var(--u) * 2); }
 .hp-options .hb-button { flex: 1 1 calc(var(--u) * 100); }
+/* a colour swatch on a game panel's line (Hearth C): a square of its palette colour, the chosen one framed */
+.hp-options .hb-button.hp-swatch { flex: 0 0 auto; width: calc(var(--u) * 14); height: calc(var(--u) * 14); min-width: 0; min-height: 0; padding: 0;
+  background: var(--hp-swatch); box-shadow: none; border: calc(var(--u) * 1) solid var(--pal-ink); }
+.hp-options .hb-button.hp-swatch[aria-pressed="true"] { outline: calc(var(--u) * 1) solid var(--pal-gold); outline-offset: calc(var(--u) * .5); }
 .hp-buttons { display: flex; justify-content: center; gap: calc(var(--u) * 8); }
 .hp-buttons .hb-button { min-width: calc(var(--u) * 60); }
 .hp-small .hb-button, .hp-choice { width: 100%; }
@@ -301,7 +308,7 @@ body { font: 15px/1.4 ui-monospace, Menlo, Consolas, monospace; }
 .hg-hint { position: absolute; left: 50%; top: calc(var(--u) * 4); transform: translateX(-50%); z-index: 13; width: calc(var(--u) * 220); max-width: calc(100% - var(--u) * 4);
   padding: calc(var(--u) * 5); flex-direction: row; align-items: center; gap: calc(var(--u) * 4); }
 .hg-hint p { flex: 1; }
-.hg-tour { position: absolute; left: 50%; bottom: calc(var(--u) * 6); transform: translateX(-50%); z-index: 14; width: calc(var(--u) * 280); max-width: calc(100% - var(--u) * 4);
+.hg-tour { position: absolute; left: 50%; bottom: calc(var(--u) * 6); transform: translateX(-50%); z-index: 21; width: calc(var(--u) * 280); max-width: calc(100% - var(--u) * 4);
   padding: calc(var(--u) * 5); gap: calc(var(--u) * 3); }
 .hg-tour.top { bottom: auto; top: calc(var(--u) * 6); }
 .hg-row { display: flex; align-items: center; gap: calc(var(--u) * 4); }
@@ -378,6 +385,8 @@ html, body { overscroll-behavior: none; }
 }
 .upright .hov-panel.hov-center, .upright .hov-panel.hov-room, .upright .hov-panel.hov-actions, .upright .hov-panel.hov-activity { width: 100%; max-width: 100%; }
 .upright .hg-tour { bottom: calc(var(--u) * 3); width: calc(100% - var(--u) * 4); }
+/* at the top (its target in the lower half) it keeps its own height: the bottom above would stretch it down the whole screen */
+.upright .hg-tour.top { bottom: auto; }
 /* a hint takes the goals' place over the sky while it shows, rather than half covering them */
 .upright .hg-hint { top: calc(var(--u) * 3); width: calc(100% - var(--u) * 4); }
 .upright .hearth-stage:has(.hg-hint) .hg-goals { visibility: hidden; }

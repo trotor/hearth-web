@@ -107,9 +107,10 @@ function derived(name) {
   return d;
 }
 
-// Lets go of the tinted copies and texts not drawn for a while (the light changes through dusk and dawn, and so do their keys).
+// Lets go of the tinted and recoloured copies and texts not drawn for a while (the light changes through dusk and dawn, and so do their
+// keys; a swatch tapped in the dress-up panel makes a new recoloured layer and leaves the old one).
 function sweep() {
-  for (const [k, v] of images) if (k.includes('*') && frameNo - v.used > KEEP_FRAMES) images.delete(k);
+  for (const [k, v] of images) if (/[|*]/.test(k) && frameNo - v.used > KEEP_FRAMES) images.delete(k);
   for (const [k, v] of texts) if (frameNo - v.used > KEEP_FRAMES) texts.delete(k);
 }
 
@@ -449,6 +450,8 @@ export function portrait(el, ops, strings, sheets, w, h, k) {
   if (!el) return;
   const list = floats(ops);
   el.width = Math.round(w * k); el.height = Math.round(h * k);
+  // a person's box is 22 x 30 units (hearth.css); a bigger picture's box is bigger (Hearth.View Portrait.Size)
+  el.style.width = `calc(var(--u) * ${w})`; el.style.height = `calc(var(--u) * ${h})`;
   const c = el.getContext('2d');
   const paint = () => {
     c.setTransform(1, 0, 0, 1, 0, 0);
@@ -462,6 +465,11 @@ export function portrait(el, ops, strings, sheets, w, h, k) {
     const s = sheet(n);
     if (!s.ready && !s.failed) s.waiters.push(paint);
   }
+}
+
+// A panel line's picture (Hearth.View PanelPicture) into the canvas the selector finds, as a portrait is drawn.
+export function pictureAt(selector, ops, strings, sheets, w, h, k) {
+  portrait(document.querySelector(selector), ops, strings, sheets, w, h, k);
 }
 
 // An element's rectangle in CSS pixels of the window ([x, y, w, h]), or null when none matches or it is not shown.

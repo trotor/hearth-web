@@ -36,12 +36,6 @@
   .card .pic { display: block; aspect-ratio: 16 / 9; background: var(--ink); border-bottom: 2px solid var(--ink); }
   /* the screenshot is shown smaller than it was taken: a smooth scale keeps its pixels even */
   .card .pic img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .card .pic.soon {
-    display: flex; align-items: center; justify-content: center; color: var(--steel); font-size: 28px;
-    background: repeating-linear-gradient(135deg, var(--ink) 0 14px, var(--shadow) 14px 28px);
-  }
-  .card .pic.soon span { background: var(--ink); padding: 6px 16px; border: 2px solid var(--steel); }
-  @media (max-width: 680px) { .card .pic.soon { aspect-ratio: 16 / 5; } }
   .card .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
   .card h2 { margin: 0; font-size: 26px; color: var(--gold); }
   .card p { margin: 0; color: var(--cream); }
@@ -52,7 +46,6 @@
     box-shadow: inset 2px 2px 0 var(--cream), inset -2px -2px 0 var(--oak);
   }
   .play:hover, .play:focus-visible { background: var(--cream); outline: none; }
-  .play.off { background: var(--ink); color: var(--steel); box-shadow: inset 2px 2px 0 var(--steel); }
   footer { margin-top: 40px; color: var(--steel); font-size: 16px; display: flex; flex-direction: column; gap: 6px; }
   footer a { color: var(--cream); }
   [data-fi] { display: none; }
@@ -93,16 +86,16 @@
     </article>
 
     <article class="card">
-      <div class="pic soon"><span data-en>Coming later</span><span data-fi>Tulossa</span></div>
+      <a class="pic" href="stable/"><img src="img/stable.png" width="960" height="540" alt="A riding stable in cross-section: stalls, an aisle and a pony called Pip"></a>
       <div class="body">
         <h2>Mane Street</h2>
         <p data-en>A riding stable: rent and furnish stalls, buy and care for horses, and dress them up with tack, colours and
           ribbons.</p>
         <p data-fi>Ratsastustalli: vuokraa ja sisusta karsinoita, osta ja hoida hevosia ja pue ne varusteilla, väreillä ja
           rusetteilla.</p>
-        <p class="meta" data-en>In the works</p>
-        <p class="meta" data-fi>Työn alla</p>
-        <span class="play off" aria-disabled="true"><span data-en>Not yet playable</span><span data-fi>Ei vielä pelattavissa</span></span>
+        <p class="meta" data-en>English and Finnish · mouse or touch</p>
+        <p class="meta" data-fi>Englanniksi ja suomeksi · hiiri tai kosketus</p>
+        <a class="play" href="stable/"><span data-en>Play</span><span data-fi>Pelaa</span></a>
       </div>
     </article>
   </section>

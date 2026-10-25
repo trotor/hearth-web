@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Hearth.TestGame.Web",
   "resources": {
-    "hash": "sha256-WSABk2ueaTFAyIbsXKWtD3OuMmBHlzU24BA+cuWydDw=",
+    "hash": "sha256-EjfrmQHZkBrLzz6T6xA/Ew5PixV3OcB2EF2jhgKLwlY=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-6mDkQm8wcqsePLieS1uDjmZJGTlxyzuaoKrjt7Rlztk="
     },
@@ -52,12 +52,12 @@
       "System.Threading.Thread.wasm": "sha256-lGCwQ/hvovTdw9AMPUliZfTIiLsST9MgvkVLZApqPUY=",
       "System.Threading.wasm": "sha256-nvb4B9Z5ZN7YocKiMisH3y+cLT78vaaykyGye/jldHc=",
       "System.Private.CoreLib.wasm": "sha256-cKikzqsfkbDVPZLY88P2GHNbdUH/1XpytxxOcv0iLmc=",
-      "Hearth.Commands.wasm": "sha256-uxIJF2S/7/mcsd0/sZZXBXwIJXjkSb4umRt4WJZ+IfU=",
-      "Hearth.Sim.wasm": "sha256-tdQa2OSwP0ppPSGrXwUxa7faUAkdbdiXRhj2VHQv/hI=",
-      "Hearth.TestGame.wasm": "sha256-SJEEDvvrUB2nlU6QtWLwSr5XhqD9qOyTiCBJTM+klT0=",
-      "Hearth.View.wasm": "sha256-2uIuDa7kIQ0pUhbkqyES0jqE8MCoWekXIMazQNzpy7s=",
-      "Hearth.Web.wasm": "sha256-c5kT39CjOqVVBw11cTqnmKHygBiugQxKT7yVAkcMRTs=",
-      "Hearth.TestGame.Web.wasm": "sha256-61sGZc4caShDdpSq8WjWU39DMwVfFPcJViTDJ+oUJlA="
+      "Hearth.Commands.wasm": "sha256-8rZ2tnUmXAnIBOj9oJOu+MutyctZP9sdOFGnMEpSFVE=",
+      "Hearth.Sim.wasm": "sha256-ojoWTT3rTx/9eqQot3RjBxCbzl6uWvifg6hg39RG0TQ=",
+      "Hearth.TestGame.wasm": "sha256-nRdIoPrphmg8+tlnzZErH5pCgNKJUH4/f/OBmZVhy/c=",
+      "Hearth.View.wasm": "sha256-zMnIPGEqpKjM+YSZTcPWRtiu2fzv1IS8eFN2+EDRLvA=",
+      "Hearth.Web.wasm": "sha256-BnOZjdjRf5wod+zV/N2jLyVAWhvrT+WjzFFuNQRKFFY=",
+      "Hearth.TestGame.Web.wasm": "sha256-ytA9l61LOM4eV5h3SERsM4SuDqJm0dfKCG2YLYga7Vg="
     }
   },
   "cacheBootResources": true,

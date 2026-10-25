@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Mansion.Web",
   "resources": {
-    "hash": "sha256-Nz2LxQteesIKfHrBfGj8s15sLt2wq1c+7MlML3BIs0k=",
+    "hash": "sha256-MFFf2QcBozFA1c5S4X8iH31chL0WRzwxtMTkJbL8ZyU=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-6mDkQm8wcqsePLieS1uDjmZJGTlxyzuaoKrjt7Rlztk="
     },
@@ -33,7 +33,7 @@
       "Microsoft.JSInterop.wasm": "sha256-LDKJ8UZcEAN9XCjqoN739Mq+x9p0Uw4mJ/6gy3wWa8E=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-Jwrlf0VPydOWncfsAvk569TQrosh6ro1Xkc8HzvG2nQ=",
       "System.Collections.Concurrent.wasm": "sha256-SMolczLHJLcrzz24NyJ7K79U/7oNb6uf85SFy97HC7s=",
-      "System.Collections.wasm": "sha256-5SHd1MQM4z8VU0/2ixQdG74A9o7EOVIVhDasNzH4CeQ=",
+      "System.Collections.wasm": "sha256-QfYr3xXuZQC0iBTS8d1bUOgYYtvuZ1hU0BdrK7aO9Cc=",
       "System.ComponentModel.wasm": "sha256-U5DnMACtDeLE2c6F1RwltbOUGqnwNwFJd/yNLnpe2Xo=",
       "System.Console.wasm": "sha256-46gvT5n5II7+wX5M9qxvdDv3txofKu6brkc+PX8d/mE=",
       "System.IO.Compression.wasm": "sha256-qwRKfD1gQ7U54dMqhwTuTLGiMIRpMtk+1zh3CldbPFc=",
@@ -51,13 +51,13 @@
       "System.Text.RegularExpressions.wasm": "sha256-nESJ1ZoivwW9LBf0uzkRJ/ZWxfcXTCS5L8tQQSDGcP0=",
       "System.Threading.Thread.wasm": "sha256-lGCwQ/hvovTdw9AMPUliZfTIiLsST9MgvkVLZApqPUY=",
       "System.Threading.wasm": "sha256-nvb4B9Z5ZN7YocKiMisH3y+cLT78vaaykyGye/jldHc=",
-      "System.Private.CoreLib.wasm": "sha256-zpnBGQYhPsCgIqtO+RflKYra73oqqhJSTTTyyibsTbM=",
-      "Hearth.Commands.wasm": "sha256-48lPDEAXpY+27u1LQqfsjLcSGfZXtKE2NX7YyC2mNyU=",
-      "Hearth.Sim.wasm": "sha256-Lsbd/pDxpBEiqfbltMs00Ite6ncIlM6BjwwHAM5oL1Q=",
-      "Hearth.View.wasm": "sha256-1qaSS0upIoMMfsHMciVPL2jJGZeFNQiSMP6ntfndEs8=",
-      "Hearth.Web.wasm": "sha256-POn12gHKnIJl24/7wl8uAESbjlweQkJOeVaXjaz6ivI=",
-      "Mansion.Content.wasm": "sha256-W5BMjhATgIWIXedienyecoal9DiOpL2yso1RF4qU7t4=",
-      "Mansion.Web.wasm": "sha256-nVFCjvAY8WIlR7Vd+oTj8ea+5O5rY+PPRUyBZUVZ0xQ="
+      "System.Private.CoreLib.wasm": "sha256-0CLwpAipCz7PQtqyfzmrRhjIiLGQzMejNnd2httkRIc=",
+      "Hearth.Commands.wasm": "sha256-uxIJF2S/7/mcsd0/sZZXBXwIJXjkSb4umRt4WJZ+IfU=",
+      "Hearth.Sim.wasm": "sha256-tdQa2OSwP0ppPSGrXwUxa7faUAkdbdiXRhj2VHQv/hI=",
+      "Hearth.View.wasm": "sha256-2uIuDa7kIQ0pUhbkqyES0jqE8MCoWekXIMazQNzpy7s=",
+      "Hearth.Web.wasm": "sha256-c5kT39CjOqVVBw11cTqnmKHygBiugQxKT7yVAkcMRTs=",
+      "Mansion.Content.wasm": "sha256-xLETlMRuBgsS/Mdjxtb5oorAAMGaqAUhGVLFQkeVf0k=",
+      "Mansion.Web.wasm": "sha256-ljtFoHZD3hlHiSc+Y1YtyS3ez/qc5rCW1s4SDdYA9Sg="
     }
   },
   "cacheBootResources": true,

@@ -76,6 +76,11 @@ body { font: 15px/1.4 ui-monospace, Menlo, Consolas, monospace; }
 .hb-telegraph.dim .hb-sectors span { cursor: default; }
 .hb-word { width: calc(var(--u) * 33); padding-left: calc(var(--u) * 3); color: var(--pal-cream); white-space: nowrap; }
 .hb-zoom { display: flex; gap: calc(var(--u) * 2); }
+/* a grid map's storey, roofs and projection buttons (grid design, P4) */
+.hb-grid { display: flex; align-items: center; gap: calc(var(--u) * 2); }
+.hb-grid .hb-button { padding: 0 calc(var(--u) * 3); white-space: nowrap; }
+.hb-grid .hb-glyph { min-width: calc(var(--u) * 14); padding: 0; }
+.hb-storey { white-space: nowrap; color: var(--pal-cream); }
 .hb-glyph { min-width: calc(var(--u) * 20); padding: 0; }
 .hb-tip-catcher { position: fixed; inset: 0; z-index: 1; }
 .hb-tip {

@@ -534,6 +534,9 @@ function resize() {
   canvas.style.imageRendering = bw === w ? '' : 'auto';
 }
 
+// The scene's bounds changed (a grid map seen from above or at the angle): the size to draw at is asked for again, and the camera fits.
+export function refit() { if (canvas && dotnet) resize(); }
+
 export function start(el, ref) {
   stop();
   canvas = el;
